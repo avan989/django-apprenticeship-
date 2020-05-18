@@ -1,4 +1,44 @@
-h1{
-    color: green;
+{% load static %}
 
+.showcase-container{
+    background-image: url("/static/homepage/images/computer.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 40%;
 }
+
+.showcase-title{
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.title{
+    font-size: 50px;
+    font-family: Bookman;
+}
+
+.apprenticeship-image img{
+    width: 100%;
+    height: auto;
+}
+
+.date-line{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.body-article{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: Sans-Serif;
+    padding-bottom: 20px;
+}
+
+.article-container{
+    background-color: #f2f2f2;
+    margin-top: 10px;
+}
+
+
