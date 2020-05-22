@@ -2,12 +2,14 @@ version: '3'
 
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
     command:  gunicorn testsite.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
+      - static_volume:/home/app/static_cdn
+    expose:
+      - 8000
     depends_on:
       - db
     env_file:
@@ -20,5 +22,15 @@ services:
     environment:
        - ./.env.prod.db
 
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/static_cdn
+    ports:
+      - 1337:80
+    depends_on:
+      - web
+
 volumes:
     postgres_data:
+    static_volume:

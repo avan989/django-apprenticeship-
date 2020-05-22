@@ -6,4 +6,3 @@ class DeveloperSerializer(serializers.ModelSerializer):
     class Meta:
         model = ApprenticeshipDevelop
         fields = ('title', 'description', 'image', 'url')
-
