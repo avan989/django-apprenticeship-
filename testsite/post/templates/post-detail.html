@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'post/css/post.css' %}">
+{% endblock %}
+
+
+{% block content%}
+
+<div class="grid-x">
+    <div class="cell small-12 medium-6 medium-offset-3 article-container">
+
+        {% autoescape off %}
+        <h3 class="text-center"> <b>{{ post.title }} </b></h3>
+
+        <span class="show-for-medium">
+            <span class="created-date"> Created: {{ post.created }}
+            {% if post.updated is not None %}
+                <br>
+                Modified: {{ post.updated }}
+            {% endif %}
+            </span>
+            <hr>
+        </span>
+
+        <div class="post-body"> {{ post.body }} </div>
+        {% endautoescape %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer_extra %}
+
+    <script src="{% static 'post/js/post.js' %}"></script>
+
+{% endblock %}

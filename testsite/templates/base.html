@@ -6,10 +6,11 @@
         <meta charset="UTF-8">
         <title>Title</title>
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        {% block extra_head %} {% endblock %}
+        {% block extra_head %}
+        {% endblock %}
         <link rel="stylesheet" href="{% static 'base/css/styles.css' %}">
 
     </head>
@@ -30,6 +31,11 @@
         <script>
             $(document).foundation();
         </script>
+
+        <footer>
+
+
+        </footer>
 
         {% block footer_extra %}
         {% endblock %}

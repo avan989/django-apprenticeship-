@@ -20,7 +20,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('homepage.urls')),
+    path('', include('landing.urls')),
+    path('post/', include('post.urls')),
+    path('keditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:

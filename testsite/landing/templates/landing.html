@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'landing/css/landing.css' %}">
+{% endblock %}
+
+
+{% block content%}
+<div class="grid-x showcase-container show-for-medium">
+    <div class="small-12">
+        <h2 class="text-center showcase-title"><span id="showcase-span">Simple Guide <br> For <br> Software Engineer</span> </h2>
+    </div>
+</div>
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x ">
+        <div class="small-12 show-for-medium text-center latest-title">
+            <h3> Latest </h3>
+        </div>
+
+        {% for entry in entries %}
+            <div class="cell small-12 medium-4">
+                <span class="post-description box-shadow">
+                    <b>{{ entry.title}}</b>
+                    <br><br>
+
+                    {% autoescape off %}
+                        {{ entry.description }}
+                    {% endautoescape %}
+
+                    <a class="button small" href="{% url 'post_detail' entry.pk %}">Read More</a>
+                </span>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block footer_extra %}
+
+    <script src="{% static 'landing/js/landing.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load static %}
+
+.article-container{
+    margin-top: 30px;
+}
+
+.created-date{
+    display: inline-block;
+    font-size: 10px;
+    width: 200px;
+}
+
+@media screen and (max-width: 39.9375em) {
+    .post-body{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
