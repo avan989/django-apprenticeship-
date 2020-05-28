@@ -3,6 +3,7 @@
 
 {% block extra_head %}
     <link rel="stylesheet" href="{% static 'landing/css/landing.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 {% endblock %}
 
 
@@ -23,13 +24,13 @@
             <div class="cell small-12 medium-4">
                 <span class="post-description box-shadow">
                     <b>{{ entry.title}}</b>
-                    <br><br>
+                    <br> <hr>
 
                     {% autoescape off %}
-                        {{ entry.description }}
+                    <span class="landing-post-body">{{ entry.body | truncatewords:50 }}</span>
                     {% endautoescape %}
 
-                    <a class="button small" href="{% url 'post_detail' entry.pk %}">Read More</a>
+                    <a class="button small read-more-button" href="{% url 'post_detail' entry.pk %}">Read More</a>
                 </span>
             </div>
         {% endfor %}

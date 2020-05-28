@@ -42,3 +42,20 @@
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
 
+.read-more-button{
+    margin-top: 20px;
+}
+
+.landing-post-body span{
+    display: inline-block;
+    font-size: 12px !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.landing-post-body{
+    display: inline-block;
+    font-size: 12px !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+

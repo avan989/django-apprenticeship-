@@ -19,10 +19,6 @@ RUN apk update \
 
 RUN pip install --upgrade pip
 
-# install Pillow & dependencies
-RUN apk add --no-cache jpeg-dev zlib-dev
-RUN apk add --no-cache --virtual build-deps build-base linux-headers
-
 # lint, coding style check against PEP8, programming errors, and cyclomatic complexity.
 RUN pip install flake8
 COPY . /usr/src/app/
@@ -38,9 +34,6 @@ RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requir
 
 # pull official base image
 FROM python:3.7.0-alpine
-
-# For Pillow
-RUN apk add --no-cache jpeg-dev zlib-dev
 
 # create directory for the app user
 RUN mkdir -p /home/app/

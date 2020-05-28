@@ -13,10 +13,6 @@ RUN apk update \
 RUN pip install --upgrade pip
 COPY ./requirements.txt /requirements.txt
 
-# install Pillow & dependencies
-RUN apk add --no-cache jpeg-dev zlib-dev
-RUN apk add --no-cache --virtual build-deps build-base linux-headers
-
 RUN pip install -r /requirements.txt
 
 # copy project

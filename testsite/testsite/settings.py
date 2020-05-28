@@ -51,10 +51,13 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
+        'fontFamily': 'Arial, sans-serif',
+        'fontSize': '13',
         'height': 300,
         'width': 1000,
     },
 }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
